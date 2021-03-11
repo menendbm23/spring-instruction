@@ -1,5 +1,8 @@
 package com.prs.business;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,17 +17,18 @@ public class Request {
 	private User user;
 	private String description;
 	private String justification;
-	private String dateNeeded;
+	private LocalDate dateNeeded;
 	private String deliveryMode;
 	private String status;
 	private double total;
-	private String submittedDate;
+	private LocalDateTime submittedDate;
 	private String rejectionReason;
+	
 	public Request() {
 		super();
 	}
-	public Request(int id, User user, String description, String justification, String dateNeeded, String deliveryMode,
-			String status, double total, String submittedDate, String rejectionReason) {
+	public Request(int id, User user, String description, String justification, LocalDate dateNeeded,
+			String deliveryMode, String status, double total, LocalDateTime submittedDate, String rejectionReason) {
 		super();
 		this.id = id;
 		this.user = user;
@@ -61,10 +65,10 @@ public class Request {
 	public void setJustification(String justification) {
 		this.justification = justification;
 	}
-	public String getDateNeeded() {
+	public LocalDate getDateNeeded() {
 		return dateNeeded;
 	}
-	public void setDateNeeded(String dateNeeded) {
+	public void setDateNeeded(LocalDate dateNeeded) {
 		this.dateNeeded = dateNeeded;
 	}
 	public String getDeliveryMode() {
@@ -85,10 +89,10 @@ public class Request {
 	public void setTotal(double total) {
 		this.total = total;
 	}
-	public String getSubmittedDate() {
+	public LocalDateTime getSubmittedDate() {
 		return submittedDate;
 	}
-	public void setSubmittedDate(String submittedDate) {
+	public void setSubmittedDate(LocalDateTime submittedDate) {
 		this.submittedDate = submittedDate;
 	}
 	public String getRejectionReason() {
@@ -97,5 +101,5 @@ public class Request {
 	public void setRejectionReason(String rejectionReason) {
 		this.rejectionReason = rejectionReason;
 	}
-
-}
+	
+}	

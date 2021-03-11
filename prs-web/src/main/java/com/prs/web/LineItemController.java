@@ -31,8 +31,8 @@ public class LineItemController {
 	}
 
 	@GetMapping("/lines-for-pr/{id}")
-	public List<LineItem> linesForPr(@PathVariable int requestId) {
-		return lineItemRepo.findByRequestId(requestId);
+	public List<LineItem> linesForPr(@PathVariable int id) {
+		return lineItemRepo.findByRequestId(id);
 	}
 
 	@GetMapping("/{id}")
