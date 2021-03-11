@@ -42,7 +42,11 @@ public class RequestController {
 
 	@PostMapping("/")
 	public Request create(@RequestBody Request request) {
+		LocalDateTime currentDate = LocalDateTime.now();
+		request.setSubmittedDate(currentDate);
+		requestRepo.save(request);
 		return requestRepo.save(request);
+		
 	}
 
 	@PutMapping("/")
