@@ -23,6 +23,7 @@ public class LineItemController {
 
 	@Autowired
 	private LineItemRepo lineItemRepo;
+	@Autowired
 	private RequestRepo requestRepo;
 
 	@GetMapping("/")
